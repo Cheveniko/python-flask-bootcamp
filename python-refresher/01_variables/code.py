@@ -47,3 +47,22 @@ def user_age_in_seconds():
 
 
 user_age_in_seconds()
+
+users = [
+    (0, "Bob", "password"),
+    (1, "Rolf", "bob123"),
+    (2, "Jose", "longpassword"),
+    (3, "username", "1234"),
+]
+
+username_mapping = {user[1]: user for user in users}
+
+
+def multiply(*args):
+    total = 1
+    for arg in args:
+        total *= arg
+    return total
+
+
+print(multiply(1, 3, 5))
