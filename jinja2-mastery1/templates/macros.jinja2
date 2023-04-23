@@ -1,0 +1,9 @@
+{% macro todo_li(text, completed) %}
+<li>{{ "[x]" if completed else "[ ]" }} - {{ text }} </li>
+{% endmacro %}
+
+{% macro todo_list(todos) %}
+    {% for text, completed in todos %}
+        {{ todo_li(text, completed) }}
+    {% endfor %}
+{% endmacro %}
