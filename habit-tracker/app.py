@@ -1,12 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask
+from routes import pages
 
-app = Flask(__name__)
+def create_app():
+    app = Flask(__name__)
+    app.register_blueprint(pages)
 
-@app.route("/")
-def index():
-    return render_template("index.html", title="Habit Tracker - Home")
-
-@app.route("/add", methods=["GET", "POST"])
-def add_habit():
-    return render_template("add_habit.html", title="Habit Tracker - Add Habit")
-
+    return app
